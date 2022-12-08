@@ -205,7 +205,7 @@ function [`MAX_M*(1<<(`MAX_M-1))-1:0] syndrome_build_table;
     integer n;
     integer count;
 begin
-    tbl = '0;
+    tbl = {(`MAX_M*(1<<(`MAX_M-1))){1'b0}};
     curr = 1;
     s = curr;
     n = `BCH_M2N(m);
