@@ -198,17 +198,15 @@ endfunction
 function [`MAX_M*(1<<(`MAX_M-1))-1:0] syndrome_build_table;
     input [31:0] m;
     input [31:0] t;
-    reg [`MAX_M*(1<<(`MAX_M-1))-1:0] tbl;
+    // reg [`MAX_M*(1<<(`MAX_M-1))-1:0] tbl;
+    reg [524288-1:0] tbl;
     integer curr;
     integer s;
     integer next;
     integer n;
     integer count;
 begin
-    for (curr = 0; curr < `MAX_M*(1<<(`MAX_M-1)); curr = curr+1) begin
-        tbl[i] = 1'b0;
-    end
-    // tbl = {(`MAX_M*(1<<(`MAX_M-1))){1'b0}};
+    tbl = {524288{1'b0}};
     curr = 1;
     s = curr;
     n = `BCH_M2N(m);
@@ -233,7 +231,10 @@ begin
             s = curr;
         end
     end
-    tbl[0+:`MAX_M] = count;
+    // tbl[0+:`MAX_M] = count;
+    for (curr = 0; curr < `MAX_M; curr = curr+1) begin
+        tbl[curr] = count[curr];
+    end
     syndrome_build_table = tbl;
 end
 endfunction
