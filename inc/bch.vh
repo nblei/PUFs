@@ -198,8 +198,7 @@ endfunction
 function [`MAX_M*(1<<(`MAX_M-1))-1:0] syndrome_build_table;
     input [31:0] m;
     input [31:0] t;
-    logic [`MAX_M-1:0] tbl [1<<(`MAX_M-1)];
-    // logic [`MAX_M*(1<<(`MAX_M-1))-1:0] tbl;
+    logic [`MAX_M*(1<<(`MAX_M-1))-1:0] tbl;
     integer curr;
     integer s;
     integer next;
@@ -215,12 +214,12 @@ begin
     while (curr <= 2 * t - 1) begin
         next = 0;
         if (s <= 2 * t - 1) begin
-            if (tbl[s])
+            if (tbl[s*`MAX_M+:`MAX_M])
                 next = 1;
             else begin
                 if (s == curr)
                     count = count + 1;
-                tbl[s] = curr;
+                tbl[s*`MAX_M+:`MAX_M] = curr;
             end
         end
         s = s + s;
@@ -231,7 +230,7 @@ begin
             s = curr;
         end
     end
-    tbl[0] = count;
+    tbl[0+:`MAX_M] = count;
     syndrome_build_table = tbl;
 end
 endfunction
