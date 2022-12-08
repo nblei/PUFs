@@ -3,6 +3,7 @@ module arbiter_puf
 (
     // Reproduce the race signal in order to prevent logic synthesis optimizations
     input  [1:0]   race_signal_i,
+    input          rstn_i,
     input  [N-1:0] challenge_i,
     output         response_o
 );
@@ -23,8 +24,9 @@ assign g = mux_val[N-1][1];
 
 logic response_q;
 
-always_ff @(posedge g) begin
-    response_q <= d;
+always_ff @(posedge g or negedge rstn_i) begin
+    if (!rstn_i) response_q <= 1'b0;
+    else response_q <= d;
 end
 
 assign response_o = response_q;
