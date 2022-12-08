@@ -198,7 +198,7 @@ endfunction
 function [`MAX_M*(1<<(`MAX_M-1))-1:0] syndrome_build_table;
     input [31:0] m;
     input [31:0] t;
-    logic [`MAX_M*(1<<(`MAX_M-1))-1:0] tbl;
+    reg [`MAX_M*(1<<(`MAX_M-1))-1:0] tbl;
     integer curr;
     integer s;
     integer next;
