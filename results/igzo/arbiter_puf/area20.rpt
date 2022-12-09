@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : arbiter_puf_N20
+Version: R-2020.09-SP4
+Date   : Thu Dec  8 11:39:54 2022
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    lib_astd (File: /home/nbleier3/Libraries/PragmaticV2_0.db)
+
+Number of ports:                          364
+Number of nets:                           445
+Number of cells:                          182
+Number of combinational cells:             81
+Number of sequential cells:                 1
+Number of macros/black boxes:               0
+Number of buf/inv:                         41
+Number of references:                       3
+
+Combinational area:             196992.000000
+Buf/Inv area:                    58752.000000
+Noncombinational area:            9792.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                206784.000000
+Total area:                 undefined
+1
