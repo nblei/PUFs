@@ -1,0 +1,52 @@
+Information: Propagating switching activity (high effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort high
+Design : bch_decoder_T11_DATA_BITS28_NCHANNEL1
+Version: R-2020.09-SP4
+Date   : Thu Dec  8 20:51:28 2022
+****************************************
+
+
+Library(s) Used:
+
+    lib_astd (File: /home/nbleier3/Libraries/PragmaticV2_0.db)
+
+
+Operating Conditions: PVT_3V_25C   Library: lib_astd
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 3    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =   1.2579 uW   (99%)
+  Net Switching Power  =  13.1873 nW    (1%)
+                         ---------
+Total Dynamic Power    =   1.2711 uW  (100%)
+
+Cell Leakage Power     =  47.9471 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       1.2497e-03        9.0473e-06        4.0842e+04        4.2101e-02  (  85.54%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  8.1772e-06        4.1400e-06        7.1051e+03        7.1174e-03  (  14.46%)
+--------------------------------------------------------------------------------------------------
+Total          1.2579e-03 mW     1.3187e-05 mW     4.7947e+04 nW     4.9218e-02 mW
+1

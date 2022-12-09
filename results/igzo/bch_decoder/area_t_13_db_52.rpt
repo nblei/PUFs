@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : bch_decoder_T13_DATA_BITS52_NCHANNEL1
+Version: R-2020.09-SP4
+Date   : Thu Dec  8 22:57:10 2022
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    lib_astd (File: /home/nbleier3/Libraries/PragmaticV2_0.db)
+
+Number of ports:                            6
+Number of nets:                            40
+Number of cells:                           31
+Number of combinational cells:             22
+Number of sequential cells:                 9
+Number of macros/black boxes:               0
+Number of buf/inv:                          2
+Number of references:                      12
+
+Combinational area:              35712.000000
+Buf/Inv area:                     2304.000000
+Noncombinational area:           85248.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                120960.000000
+Total area:                 undefined
+1

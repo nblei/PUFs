@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : bch_decoder_T5_DATA_BITS48_NCHANNEL1
+Version: R-2020.09-SP4
+Date   : Thu Dec  8 17:43:51 2022
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    lib_astd (File: /home/nbleier3/Libraries/PragmaticV2_0.db)
+
+Number of ports:                            6
+Number of nets:                            33
+Number of cells:                           28
+Number of combinational cells:             20
+Number of sequential cells:                 8
+Number of macros/black boxes:               0
+Number of buf/inv:                          4
+Number of references:                      12
+
+Combinational area:              29664.000000
+Buf/Inv area:                     4608.000000
+Noncombinational area:           76032.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                105696.000000
+Total area:                 undefined
+1
