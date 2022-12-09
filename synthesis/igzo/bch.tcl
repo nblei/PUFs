@@ -15,14 +15,17 @@ set design_clk_freq_KHz 12.5
 set design_period [expr 1000.0*1000.0 / $design_clk_freq_KHz]
 
 
-for {set p 6} {$p < 7} {incr p} {
-    puts "${p}"
-    elaborate -work WORK  -parameters "NCHANNEL=1,DATA_BITS=128" ${top}
-    create_clock -period $design_period -name clk clk
-    compile_ultra
-    uplevel #0 { report_area } >> "${res_dir}/area${p}.rpt"
-    uplevel #0 { report_power -analysis_effort high } >> "${res_dir}/power${p}.rpt"
-    uplevel #0 { report_reference -hierarchy  } >> "${res_dir}/cells${p}.rpt"
+for {set db 4} {$db < 130} {incr db 4} {
+    for {set t 8} {$t < 16 && $t < $db} {incr t} {
+        puts "${db}"
+        elaborate -work WORK  -parameters "NCHANNEL=1,DATA_BITS=${db},T=${t}" ${top}
+        create_clock -period $design_period -name clk clk
+        compile_ultra
+        set suffix "t_${t}_db_${db}"
+        uplevel #0 { report_area } >> "${res_dir}/area_${suffix}.rpt"
+        uplevel #0 { report_power -analysis_effort high } >> "${res_dir}/power_${suffix}.rpt"
+        uplevel #0 { report_reference -hierarchy  } >> "${res_dir}/cells_${suffix}.rpt"
+    }
 }
 exit
 
